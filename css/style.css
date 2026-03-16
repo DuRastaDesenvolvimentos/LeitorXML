@@ -1,0 +1,180 @@
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+
+label{
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+
+
+#lateral a{
+  border: 1px solid #fff
+
+}
+#lateral a:hover{
+  border: 1px solid #fff;
+  background: #FFF;
+  color: black;
+  transition: 700ms;
+
+}
+
+body{
+  background: #928e9f2f;
+  font-size: 0.8rem !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 100%;
+  align-content: center;
+
+  
+}
+header{
+  height: 4em;
+  padding: 1em;
+  width: auto;
+  font-size: 0.9rem !important;
+  align-items: center;
+  border-bottom: rgba(253, 253, 253, 0.227) 4px solid;
+  
+}
+header h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 600;
+}
+#cadastro{
+  height: auto;
+  width: auto;
+  color: #FFF
+}
+#logo{
+  height: auto;
+  width: auto;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  color: #fff;
+}
+#texto{
+  width: 60%;
+  margin: auto;
+  color: #fff;
+  font-size: 0.9rem;
+  
+ 
+}
+
+a{
+  color: #fff;
+}
+ #cadastro a{
+  color: #003366;
+  transition: 500ms;
+ }
+
+ #cadastro a:hover{
+  background: #003366;
+  color: #FFF;
+ }
+
+#dados3{
+  width: auto;
+  height: 50px;
+  font-size: 0.8em;
+  padding: auto;
+  box-shadow: #003366 3px 2px;
+  border-radius: 10px 5px;
+}
+#dados3 span{
+color: #003366;
+text-align: center;
+font-size: 1.2em;
+font-weight: 600;
+
+}
+
+#principal{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu{
+  width: 200px;
+  height: 250px;
+  font-size: 1em;
+  text-align: center;
+  margin: auto;
+  box-sizing:content-box ;
+  background-color: #003366;
+  border-radius: 30px 0px;
+}
+
+.conteudo{
+  width: 100%;
+  height: 250px;
+  flex-shrink: 5;
+  text-align: center; 
+  border-radius: 30px 0px;
+  align-content: center;
+  box-shadow: 5px 5px rgb(145, 139, 139);
+
+}
+
+
+
+
+
+#table{
+
+  background-color:#fff; 
+  padding: 10px;
+  margin-top: 5px;
+  
+}
+
+ul, li{
+  margin: 0;
+  padding: 1em;
+  height: auto;
+  width: auto;
+}
+
+
+
+#dados table{
+  text-align: center;
+ 
+}
+
+
+.autorizado{
+ color: #28a745;
+}
+.denegado{
+  color: orange
+}
+/*
+th, td{
+  padding: 5px 0px;
+  margin: 5px auto; 
+  width: auto;
+}
+th{
+  text-transform: uppercase;
+  font-size: 90%;
+ 
+}*/
+
+.table-container{
+  overflow-x: auto;
+  width: 100%;
+  background-color: #000;
+}

@@ -1,0 +1,135 @@
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+
+ body {
+  background: #928e9f2f;
+  width: auto;
+  height: auto;
+  margin: auto;
+  };
+
+  #texto h2{
+    font-size: 0.8em;
+  };
+  #logo{
+    font-size: 1.2em;
+    margin-left: 0;
+    padding-left: 0;
+  };
+
+  #cadastro a{
+    margin: 0.1em;
+    font-size: 0.9em;
+    width: 95px;
+  };
+
+  #cadastro{
+    height: auto;
+    width: auto;
+    margin-right: -45px;
+  };
+
+  #marcador{
+    display: none;
+  };
+
+ #dados3{
+    display: none;
+    visibility: hidden;
+    
+  }
+
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) { 
+body {
+  background: #928e9f2f;
+  width: auto;
+  height: auto
+ };
+
+  #texto h2{
+    font-size: 0.8em;
+  }
+ #cadastro a{
+    margin: 0.1em;
+    font-size: 0.9em;
+    width: 95px;
+  };
+ #cadastro{
+  height: auto;
+  width: auto;
+
+  margin-right: -40px;
+  }
+  #marcador{
+  display: none;
+}
+#dados3{
+    margin: 10px 10px ;
+    height: auto; 
+    padding: 0;
+
+  }
+
+}
+
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  body {background: #928e9f2f;}
+
+  header{
+    font-size: 1em;
+  }
+
+  #dados3{
+    margin: 10px 5px ;
+    height: auto;
+    padding: 0;
+  }
+
+ #cadastro a{
+    font-size: 0.9em;
+    width: 95px;
+    margin-bottom: 2px
+  };
+ #cadastro{
+  height: auto;
+  width: auto;
+ 
+  margin-right: auto;
+  }
+  #marcador{
+  display: none;
+}
+
+  
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+
+  body {background: #928e9f2f;}
+  #dados3{
+    margin: 10px 5px ;
+    height: auto;
+  }
+  
+    
+ }
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {  
+
+  body {background: #928e9f2f};
+  #dados3{
+    margin: 10px 5px ;
+    height: auto;
+  }
+   
+
+  
+}
