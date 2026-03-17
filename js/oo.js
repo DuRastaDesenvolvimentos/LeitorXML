@@ -1,6 +1,23 @@
 $(document).ready(()=>{
+ //ajuste para mensagem em dispositivos pequenos
  if (window.innerWidth < 1024) {
-  document.body.innerHTML = "<h2>Este sistema só pode ser usado em computadores.</h2>";
+  document.body.innerHTML = `
+    <div style="
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      font-family:Arial, sans-serif;
+      text-align:center;
+      color:#d9534f;
+    ">
+      <div>
+        <h1>⚠️ Acesso restrito</h1>
+        <p>Este sistema só pode ser usado em computadores.<br>
+        Por favor, utilize um dispositivo com tela maior.</p>
+      </div>
+    </div>
+  `;
 }
 
  //Entidade XML
