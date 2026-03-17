@@ -1,7 +1,5 @@
-$(document).ready(()=>{
-
- //tratativa para tamanho da tela
- function bloquearDispositivosPequenos() {
+// Função 1: Bloqueio de dispositivos pequenos
+function bloquearDispositivosPequenos() {
   if (window.innerWidth < 1024) {
     document.body.innerHTML = `
       <div style="
@@ -20,13 +18,13 @@ $(document).ready(()=>{
         </div>
       </div>
     `;
-    return true; // retorna true se bloqueou
+    return true;
   }
-  return false; // retorna false se não bloqueou
+  return false;
 }
 
- //Alert com os termos de uso
- function exibirTermosDeUso() {
+// Função 2: Exibir termos de uso
+function exibirTermosDeUso() {
   Swal.fire({
     title: 'Licença de Uso',
     html: `
@@ -39,6 +37,8 @@ $(document).ready(()=>{
     confirmButtonText: 'Aceito',
     showCancelButton: true,
     cancelButtonText: 'Não aceito',
+    confirmButtonColor: '#28a745',
+    cancelButtonColor: '#dc3545',
     allowOutsideClick: false,
     allowEscapeKey: false
   }).then((result) => {
@@ -47,6 +47,14 @@ $(document).ready(()=>{
     }
   });
 }
+
+
+
+$(document).ready(()=>{ 
+  const bloqueado = bloquearDispositivosPequenos();
+  if (bloqueado) return; // se bloqueou, não continua
+
+  exibirTermosDeUso();   // só chama se não bloqueou
 
  
  //Entidade XML
