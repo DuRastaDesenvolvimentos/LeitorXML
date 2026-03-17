@@ -1,4 +1,54 @@
 $(document).ready(()=>{
+
+ //tratativa para tamanho da tela
+ function bloquearDispositivosPequenos() {
+  if (window.innerWidth < 1024) {
+    document.body.innerHTML = `
+      <div style="
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        font-family:Arial, sans-serif;
+        text-align:center;
+        color:#d9534f;
+      ">
+        <div>
+          <h1>⚠️ Acesso restrito</h1>
+          <p>Este sistema só pode ser usado em computadores.<br>
+          Por favor, utilize um dispositivo com tela maior.</p>
+        </div>
+      </div>
+    `;
+    return true; // retorna true se bloqueou
+  }
+  return false; // retorna false se não bloqueou
+}
+
+ //Alert com os termos de uso
+ function exibirTermosDeUso() {
+  Swal.fire({
+    title: 'Licença de Uso',
+    html: `
+      <p>Este software é fornecido gratuitamente por DuRasta Desenvolvimentos.</p>
+      <p>Uso permitido apenas para consulta e análise de NF-e.</p>
+      <p>É proibida a reprodução, modificação ou comercialização sem autorização.</p>
+      <p><a href="https://github.com/DuRastaDesenvolvimentos/LeitorXML?tab=License-1-ov-file" target="_blank">Leia os termos completos</a></p>
+    `,
+    icon: 'info',
+    confirmButtonText: 'Aceito',
+    showCancelButton: true,
+    cancelButtonText: 'Não aceito',
+    allowOutsideClick: false,
+    allowEscapeKey: false
+  }).then((result) => {
+    if (!result.isConfirmed) {
+      document.body.innerHTML = "<h2>Você precisa aceitar os termos para usar o sistema.</h2>";
+    }
+  });
+}
+
+ 
  //Entidade XML
   class Xml {
       #infProt = null
