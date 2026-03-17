@@ -31,7 +31,11 @@ function exibirTermosDeUso() {
       <p>Este software é fornecido gratuitamente por DuRasta Desenvolvimentos.</p>
       <p>Uso permitido apenas para consulta e análise de NF-e.</p>
       <p>É proibida a reprodução, modificação ou comercialização sem autorização.</p>
-      <p><a href="https://github.com/DuRastaDesenvolvimentos/LeitorXML?tab=License-1-ov-file" target="_blank">Leia os termos completos</a></p>
+      <p> <a href="https://github.com/DuRastaDesenvolvimentos/LeitorXML?tab=License-1-ov-file" 
+           target="_blank" 
+           style="color:#28a745; font-weight:bold; text-decoration:none;">
+           Leia os termos completos
+        </a></p>
     `,
     icon: 'info',
     confirmButtonText: 'Aceito',
