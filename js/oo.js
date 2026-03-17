@@ -29,7 +29,8 @@ function exibirTermosDeUso() {
     title: 'Licença de Uso',
     html: `
       <p>Este software é fornecido gratuitamente por DuRasta Desenvolvimentos.</p>
-      <p>Uso permitido apenas para consulta e análise de NF-e.</p>
+      <p>Uso permitido apenas para consulta e análise de NF-e NFC-e.</p>
+      <p>O leitor está preparado para arquivos cancelados, duplicados, em contingência e corrompidos</p>
       <p>É proibida a reprodução, modificação ou comercialização sem autorização.</p>
       <p> <a href="https://github.com/DuRastaDesenvolvimentos/LeitorXML?tab=License-1-ov-file" 
            target="_blank" 
