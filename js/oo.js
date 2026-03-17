@@ -20,6 +20,27 @@ $(document).ready(()=>{
   `;
 }
 
+ Swal.fire({
+    title: 'Licença de Uso',
+    html: `
+      <p>Este software é fornecido gratuitamente por DuRasta Desenvolvimentos.</p>
+      <p>Uso permitido apenas para consulta e análise de NF-e.</p>
+      <p>É proibida a reprodução, modificação ou comercialização sem autorização.</p>
+      <p><a href="https://github.com/DuRastaDesenvolvimentos/LeitorXML?tab=License-1-ov-file" target="_blank">Leia os termos completos</a></p>
+    `,
+    icon: 'info',
+    confirmButtonText: 'Aceito',
+    showCancelButton: true,
+    cancelButtonText: 'Não aceito',
+    allowOutsideClick: false,
+    allowEscapeKey: false
+  }).then((result) => {
+    if (!result.isConfirmed) {
+      document.body.innerHTML = "<h2>Você precisa aceitar os termos para usar o sistema.</h2>";
+    }
+  });
+});
+
  //Entidade XML
   class Xml {
       #infProt = null
