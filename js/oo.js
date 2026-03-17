@@ -41,7 +41,7 @@ $(document).ready(()=>{
       document.body.innerHTML = "<h2>Você precisa aceitar os termos para usar o sistema.</h2>";
     }
   });
-});
+
 
  //Entidade XML
   class Xml {
