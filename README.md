@@ -1,3 +1,6 @@
+## 🌐 Site publicado
+O projeto está disponível em: [https://leitor-xml.netlify.app](https://leitor-xml.netlify.app)
+
 # Documentação do Leitor de XML
 
 ## 1. Visão Geral
