@@ -1,4 +1,8 @@
 $(document).ready(()=>{
+ if (window.innerWidth < 1024) {
+  document.body.innerHTML = "<h2>Este sistema só pode ser usado em computadores.</h2>";
+}
+
  //Entidade XML
   class Xml {
       #infProt = null
@@ -110,7 +114,7 @@ $(document).ready(()=>{
   async function processarArquivos() {
     const arquivos = $('#file')[0].files //FileList - Seleciona os arquivos carregados
     let arqLido = 0
-    if(arquivos.length > 10_999){
+    if(arquivos.length > 1_000){
       alert('Quantidade maior que a permitida. Por favor reduza a quantidade!!')
       throw new Error ("Quantidade maior que a permitida")
     };
