@@ -1,26 +1,28 @@
 $(document).ready(()=>{
- //ajuste para mensagem em dispositivos pequenos
- if (window.innerWidth < 1024) {
-  document.body.innerHTML = `
-    <div style="
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-      font-family:Arial, sans-serif;
-      text-align:center;
-      color:#d9534f;
-    ">
-      <div>
-        <h1>⚠️ Acesso restrito</h1>
-        <p>Este sistema só pode ser usado em computadores.<br>
-        Por favor, utilize um dispositivo com tela maior.</p>
+// Ajuste para dispositivos pequenos
+  if (window.innerWidth < 1024) {
+    document.body.innerHTML = `
+      <div style="
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        font-family:Arial, sans-serif;
+        text-align:center;
+        color:#d9534f;
+      ">
+        <div>
+          <h1>⚠️ Acesso restrito</h1>
+          <p>Este sistema só pode ser usado em computadores.<br>
+          Por favor, utilize um dispositivo com tela maior.</p>
+        </div>
       </div>
-    </div>
-  `;
-}
+    `;
+    return; // encerra aqui, não deixa rodar o Swal.fire
+  }
 
- Swal.fire({
+  // Só roda se for tela grande
+  Swal.fire({
     title: 'Licença de Uso',
     html: `
       <p>Este software é fornecido gratuitamente por DuRasta Desenvolvimentos.</p>
