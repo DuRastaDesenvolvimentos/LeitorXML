@@ -62,7 +62,7 @@ function exibirComunicado() {
       <p>O objetivo principal é ajudar empresas e pequenos contadores com a apuração
       de arquivos XML, e servir como minha carta de apresentação como Desenvolvedor Web.</p>
       <p>Portanto o sistema NÃO PASSARÁ mais por atualizações além das correções nos cálculos de apuração,
-      caso perceba algum erro de cálculo, ficarei grato pelofeedback!</p>
+      caso perceba algum erro de cálculo, ficarei grato pelo feedback!</p>
       <p>Estou trabalhando em uma versão completa do sistema com Backend em PHP, e algumas funcionalidades em Python. Por isso, essa versão só terá atualizações em seus respectivos cálculos.</p>
       <p> <a href="https://github.com/DuRastaDesenvolvimentos/LeitorXML#10-contato" 
            target="_blank" 
