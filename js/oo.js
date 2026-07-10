@@ -68,6 +68,7 @@ function exibirComunicado() {
            target="_blank" 
            style="color:#28a745; font-weight:bold; text-decoration:none;">
            FALE CONOSCO
+           du.rastasolucoes@gmail.com
         </a></p>
     `,
     icon: 'info',
