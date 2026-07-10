@@ -119,19 +119,6 @@ Programador responsável: **Wesley Cainana**
 
 Para dúvidas, sugestões, suporte técnico ou propostas de parceria, entre em contato diretamente pelos canais acima.
 
-## 11. Exemplo de Uso
-```html
-<div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-
-<input type="file" id="file" multiple />
-<button id="debug">Processar</button>
-
-<table id="table">
-  <tbody id="view"></tbody>
-</table>
-
 
 
 

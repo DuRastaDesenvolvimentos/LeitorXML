@@ -1,6 +1,6 @@
 // Função 1: Bloqueio de dispositivos pequenos
 function bloquearDispositivosPequenos() {
-  if (window.innerWidth < 1024) {
+  if (window.innerWidth < 720) {
     document.body.innerHTML = `
       <div style="
         display:flex;
@@ -12,9 +12,9 @@ function bloquearDispositivosPequenos() {
         color:#d9534f;
       ">
         <div>
-          <h1>⚠️ Acesso restrito</h1>
-          <p>Este sistema só pode ser usado em computadores.<br>
-          Por favor, utilize um dispositivo com tela maior.</p>
+          <h2>⚠️AVISO!!⚠️<br><br> Tivemos um erro </h2>
+          <h1>Este sistema não consegue funcionar bem em dispositivos pequenos.<br>
+          Por favor, utilize um dispositivo com tela maior.</h1>
         </div>
       </div>
     `;
@@ -49,9 +49,43 @@ function exibirTermosDeUso() {
   }).then((result) => {
     if (!result.isConfirmed) {
       document.body.innerHTML = "<h2>Você precisa aceitar os termos para usar o sistema.</h2>";
+    
     }
   });
 }
+
+function exibirComunicado() {
+  Swal.fire({
+    title: 'Comunicado',
+    html: `
+      <p>Este software é fornecido gratuitamente por DuRasta Desenvolvimentos.</p>
+      <p>O Objetivo principal é ajudar empresas e pequenos contadores com a apurações
+      de aquivos XMLs, e servir como minha carta de apresentação como Desenvolvedor Web.</p>
+      <p>Portanto o sistema NÃO PASSARÁ mais por atualizações além dos cálculos de apurações,
+      caso perceba algum erro de cálculo, ficarei grato com seu feedback!</p>
+      <p>Estou trabalhando em uma versão completa do sistema com Backend em PHP, e algumas funcionalizades em Python. Por isso essa versão só terá atualizações em seus respetivos cálculos.</p>
+      <p> <a href="https://github.com/DuRastaDesenvolvimentos/LeitorXML#10-contato" 
+           target="_blank" 
+           style="color:#28a745; font-weight:bold; text-decoration:none;">
+           FALE CONOSCO
+        </a></p>
+    `,
+    icon: 'info',
+    confirmButtonText: 'Entendido',
+    showCancelButton: false,
+    cancelButtonText: 'Não aceito',
+    confirmButtonColor: '#28a745',
+    cancelButtonColor: '#dc3545',
+    allowOutsideClick: false,
+    allowEscapeKey: false
+  }).then((result) => {
+    if (!result.isConfirmed) {
+      document.body.innerHTML = "<h2>Algo deu errado. Atualize o navegador.</h2>";
+    
+    }
+  });
+}
+
 
 
 
@@ -107,15 +141,7 @@ $(document).ready(()=>{
           this.#infProt = this._parsedXml.querySelector('infProt')?.childNodes 
           this.#procEventoNFe = this._parsedXml.querySelectorAll('infEvento')[1]?.children[3]?.textContent || this._parsedXml.querySelectorAll('infEvento')[0]?.children[3]?.textContent
           
-          /*
-          if(this.#procEventoNFe == 135 && this.valor !== 'Ausente' && this.valor !== 'R$: Ausente'){
-            console.log(this.#procEventoNFe)
-            this.status = this.#procEventoNFe
-          }*/
-          
-          
-          
-
+      
           if(this.cnpj === 'Ausente' || this.chave === 'Ausente' || this.dataEmissao === 'Ausente' ||   this.    naturaOp === 'Ausente' || this.valor === 'Ausente' || this.modelo === 'Ausente' || this.status === 'Ausente' || this.nfeNumero === 'Ausente' || this.numSerie === 'Ausente'){
             //throw new Error ("Arquivo com estrutura diferente")
             if(this._parsedXml.querySelector("Reference") != undefined || this._parsedXml.querySelector("Reference") != null){
@@ -126,27 +152,9 @@ $(document).ready(()=>{
               this.chave = this.chave 
               this.status = this.status
             }
-
-            //console.log(this.chave)
-            
             
           }
       };
-
-
-
-    
-
-     buscaProduto(){
-      for (let i = 0; i < this._produtos.length; i++) {
-        const produtos = this._produtos[i].children[0].children;
-        const impostos = this._produtos[i].children[1].children;
-        //console.log(produtos)
-        //console.log(impostos)
-        
-      }
-    }
-
     
     //retorna as informações do objeto em questão em formato de array.
     toTableRow() {
@@ -166,35 +174,29 @@ $(document).ready(()=>{
     };
   }; 
 
-
-
-  
- ////////// Ajustes do sincronismo das funções//////
+ //////////sincronismo das funções//////
   async function processarArquivos() {
-    const arquivos = $('#file')[0].files //FileList - Seleciona os arquivos carregados
+    const arquivos = $('#file')[0].files 
     let arqLido = 0
     if(arquivos.length > 1_000){
       alert('Quantidade maior que a permitida. Por favor reduza a quantidade!!')
       throw new Error ("Quantidade maior que a permitida")
     };
-    const xmlInst = []; //Amazena as intancias de XML
-    const promises = []; //Guarda as promises das funções
+    const xmlInst = []; 
+    const promises = [];
     for (let i= 0; i < arquivos.length; i++) {
       
         const promise = new Promise( (resolve) => {
-          //Instancia de FeleReader que transforma o arquivo carregado em texto bruto
-          const reader = new FileReader() //leitura do Arquivo formato texto.
-          let xml = new Xml() //a cada interação do laço, um novo objeto XML é criado 
+          const reader = new FileReader() 
+          let xml = new Xml() 
           
           reader.onload = (event)=>{
             const xmlString = event.target.result
-            //Tratativa para evitar leitura de corrompidos
             if (!xmlString || typeof xmlString !== 'string') {
               console.warn('Arquivo corrompido ou ilegível, ignorado:', arquivos[i].name);
               resolve();
               return;
             }
-
 
             try{
             xml.lerXML(xmlString)
@@ -216,13 +218,7 @@ $(document).ready(()=>{
               atualizaBarra(porcetagemTotal)
               resolve() 
             }
-              /*
-            reader.addEventListener("loadend", ()=>{
-              arqLido++
-              const porcetagemTotal = (arqLido / arquivos.length)*100
-              atualizaBarra(porcetagemTotal)
-             
-            });*/
+
 
             reader.onerror = (e) => {
               console.error('Erro ao ler o arquivo:', arquivos[i].name, e);
@@ -232,25 +228,11 @@ $(document).ready(()=>{
               resolve() 
      
             };
-            /*
-            reader.onloadend = (e) => {
-             arqLido++
-              const porcetagemTotal = (arqLido / arquivos.length)*100
-              atualizaBarra(porcetagemTotal)
-              resolve() 
-            }*/
 
             
           };reader.readAsText(arquivos[i]);//Fim FileReader
 
-          /*///// vamos abrir alguns precedentes aqui //////////
-          reader.addEventListener("progress",(event)=>{
-            if(event.lengthComputable){
-            const porcentagem = (event.loaded / event.total)*100;
-            console.log(porcentagem)
-            }
-          });
-          ////// finalizados /////////*/
+
         }); //fim promise
         promises.push(promise)   
       
@@ -260,22 +242,6 @@ $(document).ready(()=>{
   procuraDuplicado(xmlInst, arquivos.length)
   }; //Fim função async
  
- /*
-  //procura valores duplicados e salva a primeira ocorrencia
-  async function procuraDuplicado(inst, qtd){
-    const confere = new Set();
-    const filtrado = inst.filter(([a, chave]) => {
-    if (confere.has(chave)) return false; // já vimos essa chave = descarta
-    confere.add(chave);                   // primeira vez → guarda
-    return true;
-   });
-   /*procuraEventoSozinho(qtd, filtrado)
-   atualizador(qtd, filtrado)
-   viewer(filtrado)
-   console.log(filtrado)
-  };*/
-
-
 
 
 //procura valores duplicados e salva a segunda ocorrencia
@@ -485,13 +451,3 @@ $(document).ready(()=>{
 
 
 
-/*
-// Uso: quando o input de arquivo muda
-document.getElementById('file').addEventListener('change', async (e) => {
-    const files = e.target.files;
-    const xmlInstances = await processFiles(files);
-    renderTable(xmlInstances);
-});
-// EXECUTAR QUANDO SELECIONAR ARQUIVOS:
-document.getElementById('file').addEventListener('change', processarArquivos);
-*/
