@@ -59,11 +59,11 @@ function exibirComunicado() {
     title: 'Comunicado',
     html: `
       <p>Este software é fornecido gratuitamente por DuRasta Desenvolvimentos.</p>
-      <p>O Objetivo principal é ajudar empresas e pequenos contadores com a apurações
-      de aquivos XMLs, e servir como minha carta de apresentação como Desenvolvedor Web.</p>
-      <p>Portanto o sistema NÃO PASSARÁ mais por atualizações além dos cálculos de apurações,
-      caso perceba algum erro de cálculo, ficarei grato com seu feedback!</p>
-      <p>Estou trabalhando em uma versão completa do sistema com Backend em PHP, e algumas funcionalizades em Python. Por isso essa versão só terá atualizações em seus respetivos cálculos.</p>
+      <p>O objetivo principal é ajudar empresas e pequenos contadores com a apuração
+      de arquivos XML, e servir como minha carta de apresentação como Desenvolvedor Web.</p>
+      <p>Portanto o sistema NÃO PASSARÁ mais por atualizações além das correções nos cálculos de apuração,
+      caso perceba algum erro de cálculo, ficarei grato pelofeedback!</p>
+      <p>Estou trabalhando em uma versão completa do sistema com Backend em PHP, e algumas funcionalidades em Python. Por isso, essa versão só terá atualizações em seus respectivos cálculos.</p>
       <p> <a href="https://github.com/DuRastaDesenvolvimentos/LeitorXML#10-contato" 
            target="_blank" 
            style="color:#28a745; font-weight:bold; text-decoration:none;">
