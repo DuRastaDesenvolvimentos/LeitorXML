@@ -206,7 +206,7 @@ $(document).ready(()=>{
            // console.log(row)
             if(row && row[1]&& !isNaN(parseFloat(row[1]))){
               xmlInst.push(row)
-              xml.buscaProduto()
+
             }else{
               console.warn('Valor inválido no arquivo, pulado:', arquivos[i].name);
               alert('Valor inválido no arquivo: ' + arquivos[i].name + '. O arquivo será pulado.')
