@@ -257,8 +257,9 @@ $(document).ready(()=>{
         const existente = confere.get(chave);
         const completo = linha[0] !=='Ausente' && linha[4] !== 'R$: Ausente';
         if(completo){
-          if(linha[9]){
-            linha[6] = linha[9]; // Atualiza o status com o valor do evento, se disponível
+          if(linha[9] || existente[9]){
+            linha[6] = linha[9] || existente[9]; // Atualiza o status com o valor do evento, se disponível
+            linha[9] = existente[9]
           }
            confere.set(chave, linha);
         }else {
